@@ -1,0 +1,56 @@
+{
+  "name": "hora-do-remedio",
+  "version": "1.0.0",
+  "description": "Projeto dedicado a calcular as horas de tomar o remédio de acordo com o intervalo de tempo prescrito pelo médico",
+  "private": true,
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "webpack-dev-server",
+    "build": "webpack -p --env production"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/igorhideki/hora-do-remedio.git"
+  },
+  "keywords": [
+    "remedio",
+    "medicamento",
+    "farmacia",
+    "medico",
+    "medicacao"
+  ],
+  "author": "Igor Trindade",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/igorhideki/hora-do-remedio/issues"
+  },
+  "homepage": "https://github.com/igorhideki/hora-do-remedio#readme",
+  "devDependencies": {
+    "@babel/core": "^7.4.3",
+    "@babel/preset-env": "^7.4.3",
+    "babel-eslint": "^10.0.1",
+    "babel-jest": "^24.7.1",
+    "babel-loader": "^8.0.5",
+    "css-loader": "^2.1.1",
+    "eslint": "^5.16.0",
+    "eslint-config-standard": "^12.0.0",
+    "eslint-plugin-import": "^2.16.0",
+    "eslint-plugin-node": "^8.0.1",
+    "eslint-plugin-promise": "^4.1.1",
+    "eslint-plugin-standard": "^4.0.0",
+    "html-loader": "^0.5.5",
+    "html-webpack-plugin": "^3.2.0",
+    "jest": "^24.7.1",
+    "mini-css-extract-plugin": "^0.5.0",
+    "prettier": "^1.16.4",
+    "uglifyjs-webpack-plugin": "^2.1.2",
+    "webpack": "^4.29.6",
+    "webpack-cli": "^3.3.0",
+    "webpack-dev-server": "^3.2.1"
+  },
+  "dependencies": {
+    "node-sass": "^4.11.0",
+    "sass-loader": "^7.1.0",
+    "style-loader": "^0.23.1"
+  }
+}
