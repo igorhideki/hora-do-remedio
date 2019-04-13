@@ -4,7 +4,7 @@
   "description": "Projeto dedicado a calcular as horas de tomar o remédio de acordo com o intervalo de tempo prescrito pelo médico",
   "private": true,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest",
     "start": "webpack-dev-server",
     "build": "webpack -p --env production"
   },
