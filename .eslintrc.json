@@ -5,6 +5,5 @@
     "browser": true
   },
   "extends": ["standard"],
-  "rules": {
-  }
+  "plugins": ["html"]
 }
