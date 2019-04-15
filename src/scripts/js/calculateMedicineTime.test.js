@@ -15,8 +15,8 @@ describe('calculateMedicineTime', () => {
   })
 
   test('should call the function calculateMedicineTime and return the correct result', () => {
-    const dateNow = new Date(1997, 1, 1, 0, 0)
+    const date = new Date(1997, 1, 1, 0, 0)
     const timesInterval = 3
-    expect(calculateMedicineTime(dateNow, timesInterval)).toEqual(['00:00', '08:00', '16:00'])
+    expect(calculateMedicineTime(date, timesInterval)).toEqual(['00:00', '08:00', '16:00'])
   })
 })
