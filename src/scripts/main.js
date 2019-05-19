@@ -1,5 +1,5 @@
 // scripts
-import './js/test'
+import './js/app'
 
 // styles
 import '../styles/main'
