@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt">
+<html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,6 +8,36 @@
 </head>
 <body>
   <h1>Hora do remédio</h1>
-  <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Repellat, molestias.</p>
+  <div>
+    <label for="input-hour">Hora</label>
+    <input type="tel" id="input-hour" readonly>
+    <button id="button-add-hour" name="incrementHour">+ 1</button>
+    <button id="button-remove-hour" name="decrementHour">- 1</button>
+  </div>
+  <div>
+    <label for="input-min">Minuto</label>
+    <input type="tel" id="input-min" readonly>
+    <button id="button-add-min" name="incrementMin">+ 1</button>
+    <button id="button-remove-min" name="decrementMin">- 1</button>
+  </div>
+  <div>
+    Intervalo
+    <div>
+      <input id="interval2" type="radio" name="interval" value="2" checked>
+      <label for="interval2">12/12 h (Duas vezes ao dia)</label>
+    </div>
+    <div>
+      <input id="interval3" type="radio" name="interval" value="3">
+      <label for="interval3">8/8 h (Três vezes ao dia)</label>
+    </div>
+    <div>
+      <input id="interval4" type="radio" name="interval" value="4">
+      <label for="interval4">6/6 h (Quatro vezes ao dia)</label>
+    </div>
+  </div>
+  <div>
+    <button id="button-calc">Calcular horário</button>
+  </div>
+  <div id="result"></div>
 </body>
 </html>
