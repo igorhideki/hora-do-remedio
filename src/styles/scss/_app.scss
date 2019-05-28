@@ -1,0 +1,16 @@
+body {
+  @extend %font-content;
+  background-color: $accent;
+  color: $text-color;
+  padding: 1.6rem 0;
+}
+
+.container {
+  max-width: 80rem;
+  width: 100%;
+  padding: 0 1.6rem;
+  background-color: $lightest-gray;
+  margin: 0 auto;
+  height: 100%;
+  overflow: auto;
+}
