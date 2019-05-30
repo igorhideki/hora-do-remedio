@@ -8,37 +8,52 @@
 </head>
 <body>
   <div class="container">
-    <h1>Hora do remédio</h1>
-    <div>
-      <label for="input-hour">Hora</label>
-      <input type="tel" id="input-hour" readonly>
-      <button id="button-add-hour" name="incrementHour">+ 1</button>
-      <button id="button-remove-hour" name="decrementHour">- 1</button>
-    </div>
-    <div>
-      <label for="input-min">Minuto</label>
-      <input type="tel" id="input-min" readonly>
-      <button id="button-add-min" name="incrementMin">+ 1</button>
-      <button id="button-remove-min" name="decrementMin">- 1</button>
-    </div>
-    <div>
-      Intervalo
-      <div>
-        <input id="interval2" type="radio" name="interval" value="2" checked>
-        <label for="interval2">12/12 h (Duas vezes ao dia)</label>
+    <header class="header">
+      <img
+        class="header__logo"
+        src="./assets/images/hora-do-remedio_1.svg"
+        alt="hora do remédio">
+    </header>
+    <section class="intro">
+      <h1 class="intro__title">Calcule a hora de tomar seu remédio aqui</h1>
+      <p class="intro__text"">
+        Utilize nossa calculadora para saber os horários certos para tomar seu
+        remédio. É fácil e rápido, preencha o horário da primeira dose e quantas
+        vezes ao dia são necessários e diremos a hora certa de cada dose.
+      </p>
+    </section>
+    <section class="form">
+      <div class="form__input-time">
+        <label for="input-hour">Hora</label>
+        <input type="tel" id="input-hour" readonly>
+        <button id="button-add-hour" name="incrementHour">+ 1</button>
+        <button id="button-remove-hour" name="decrementHour">- 1</button>
+      </div>
+      <div class="form__input-time">
+        <label for="input-min">Minuto</label>
+        <input type="tel" id="input-min" readonly>
+        <button id="button-add-min" name="incrementMin">+ 1</button>
+        <button id="button-remove-min" name="decrementMin">- 1</button>
+      </div>
+      <div class="form__input-interval">
+        Intervalo
+        <div>
+          <input id="interval2" type="radio" name="interval" value="2" checked>
+          <label for="interval2">12/12 h (Duas vezes ao dia)</label>
+        </div>
+        <div>
+          <input id="interval3" type="radio" name="interval" value="3">
+          <label for="interval3">8/8 h (Três vezes ao dia)</label>
+        </div>
+        <div>
+          <input id="interval4" type="radio" name="interval" value="4">
+          <label for="interval4">6/6 h (Quatro vezes ao dia)</label>
+        </div>
       </div>
       <div>
-        <input id="interval3" type="radio" name="interval" value="3">
-        <label for="interval3">8/8 h (Três vezes ao dia)</label>
+        <button id="button-calc">Calcular horário</button>
       </div>
-      <div>
-        <input id="interval4" type="radio" name="interval" value="4">
-        <label for="interval4">6/6 h (Quatro vezes ao dia)</label>
-      </div>
-    </div>
-    <div>
-      <button id="button-calc">Calcular horário</button>
-    </div>
+    </section>
     <div id="result"></div>
   </div>
 </body>

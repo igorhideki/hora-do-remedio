@@ -13,4 +13,35 @@ body {
   margin: 0 auto;
   height: 100%;
   overflow: auto;
+
+  @media(min-width: 768px) {
+    padding: 0 3.2rem;
+  }
+}
+
+.header {
+  padding: 4rem 0;
+  border-bottom: 1px solid lighten($secondary, 30%);
+
+  &__logo {
+    max-width: 22rem;
+    width: 100%;
+    margin: 0 auto;
+    display: block;
+  }
+}
+
+.intro {
+  padding: 4rem 0;
+
+  &__title {
+    margin: 0 0 1rem;
+    font-size: 1.8rem;
+  }
+
+  &__text {
+    margin: 0;
+    font-size: 1.6rem;
+    text-align: justify;
+  }
 }
