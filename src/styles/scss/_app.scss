@@ -45,3 +45,69 @@ body {
     text-align: justify;
   }
 }
+
+.form {
+  &__title {
+    font-size: 1.6rem;
+    text-align: center;
+  }
+
+  &__input-group {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    > * {
+      padding: 0 .8rem;
+    }
+  }
+
+  &__input-wrapper {
+    display: inline-block;
+  }
+
+  &__input-time {
+    font-size: 4rem;
+    display: inline-block;
+    max-width: 8rem;
+    text-align: center;
+    padding: 2rem 0;
+    border: none;
+  }
+
+  &__label {
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 1.2rem;
+    margin-top: .8rem;
+    display: block
+  }
+
+  &__button {
+    display: block;
+    width: 100%;
+    border: none;
+    background-color: $primary;
+    color: $white;
+    height: 2.4rem;
+
+    &:first-of-type {
+      border-top-left-radius: .8rem;
+      border-top-right-radius: .8rem;
+    }
+
+    &:last-of-type {
+      border-bottom-left-radius: .8rem;
+      border-bottom-right-radius: .8rem;
+    }
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  &__separator {
+    font-size: 4rem;
+    margin-top: -2.1rem;
+  }
+}

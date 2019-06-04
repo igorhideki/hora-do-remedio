@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Hora do remédio</title>
 </head>
+
 <body>
   <div class="container">
     <header class="header">
@@ -23,17 +25,21 @@
       </p>
     </section>
     <section class="form">
-      <div class="form__input-time">
-        <label for="input-hour">Hora</label>
-        <input type="tel" id="input-hour" readonly>
-        <button id="button-add-hour" name="incrementHour">+ 1</button>
-        <button id="button-remove-hour" name="decrementHour">- 1</button>
-      </div>
-      <div class="form__input-time">
-        <label for="input-min">Minuto</label>
-        <input type="tel" id="input-min" readonly>
-        <button id="button-add-min" name="incrementMin">+ 1</button>
-        <button id="button-remove-min" name="decrementMin">- 1</button>
+      <h2 class="form__title">Selecione o horário da primeira dose</h2>
+      <div class="form__input-group">
+        <div class="form__input-wrapper">
+          <button id="button-add-hour" class="form__button" name="incrementHour">+ 1</button>
+          <input id="input-hour" class="form__input-time" type="tel" readonly>
+          <button id="button-remove-hour" class="form__button" name="decrementHour">- 1</button>
+          <label class="form__label" for="input-hour">Hora</label>
+        </div>
+        <span class="form__separator">:</span>
+        <div class="form__input-wrapper">
+          <button id="button-add-min" class="form__button" name="incrementMin">+ 1</button>
+          <input id="input-min" class="form__input-time" type="tel" readonly>
+          <button id="button-remove-min" class="form__button" name="decrementMin">- 1</button>
+          <label class="form__label" for="input-min">Minuto</label>
+        </div>
       </div>
       <div class="form__input-interval">
         Intervalo
@@ -57,4 +63,5 @@
     <div id="result"></div>
   </div>
 </body>
+
 </html>
