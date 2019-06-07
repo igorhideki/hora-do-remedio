@@ -1,3 +1,18 @@
+%button-focus {
+  outline: 0;
+  box-shadow: 0 0 0.6rem rgba(0, 0, 0, 0.2);
+}
+
+%button-active {
+  background-color: darken($primary, 3%);
+  box-shadow: inset 0 0 0.6rem rgba(0, 0, 0, 0.2);
+}
+
+%button-hover {
+  background-color: darken($primary, 2%);
+  box-shadow: 0 0 0.6rem rgba(0, 0, 0, 0.2);
+}
+
 body {
   @extend %font-content;
   background-color: $accent;
@@ -14,7 +29,7 @@ body {
   height: 100%;
   overflow: auto;
 
-  @media(min-width: 768px) {
+  @media (min-width: 768px) {
     padding: 0 3.2rem;
   }
 }
@@ -32,7 +47,7 @@ body {
 }
 
 .intro {
-  padding: 4rem 0;
+  padding: 3rem 0;
 
   &__title {
     margin: 0 0 1rem;
@@ -48,17 +63,25 @@ body {
 
 .form {
   &__title {
+    margin: 0 0 1rem;
     font-size: 1.6rem;
     text-align: center;
+  }
+
+  &__text {
+    margin: 0;
+    font-size: 1.6rem;
+    text-align: justify;
   }
 
   &__input-group {
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-bottom: 3rem;
 
     > * {
-      padding: 0 .8rem;
+      padding: 0 0.8rem;
     }
   }
 
@@ -73,14 +96,18 @@ body {
     text-align: center;
     padding: 2rem 0;
     border: none;
+
+    &:focus {
+      outline: 0;
+    }
   }
 
   &__label {
     text-align: center;
     text-transform: uppercase;
     font-size: 1.2rem;
-    margin-top: .8rem;
-    display: block
+    margin-top: 0.8rem;
+    display: block;
   }
 
   &__button {
@@ -90,24 +117,116 @@ body {
     background-color: $primary;
     color: $white;
     height: 2.4rem;
+    transition: all 0.2s linear;
 
     &:first-of-type {
-      border-top-left-radius: .8rem;
-      border-top-right-radius: .8rem;
+      border-top-left-radius: 0.8rem;
+      border-top-right-radius: 0.8rem;
     }
 
     &:last-of-type {
-      border-bottom-left-radius: .8rem;
-      border-bottom-right-radius: .8rem;
+      border-bottom-left-radius: 0.8rem;
+      border-bottom-right-radius: 0.8rem;
     }
 
     &:focus {
-      outline: none;
+      @extend %button-focus;
+    }
+
+    &:hover,
+    &:active {
+      @extend %button-hover;
     }
   }
 
   &__separator {
     font-size: 4rem;
     margin-top: -2.1rem;
+  }
+
+  &__input-interval {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 3rem;
+
+    @media (min-width: 768px) {
+      flex-direction: row;
+    }
+  }
+
+  &__input-radio {
+    // padding: 1rem;
+
+    & label {
+      padding: 0.8rem 1.6rem;
+      background-color: $light-gray;
+      user-select: none;
+      cursor: pointer;
+      transition: all 0.2s linear;
+      display: block;
+      border-radius: 1.6rem;
+      font-weight: bold;
+
+      &:hover {
+        box-shadow: 0 0 0.6rem rgba(0, 0, 0, 0.2);
+      }
+    }
+
+    & input {
+      display: none;
+    }
+
+    & input:checked + label {
+      @extend %button-active;
+      color: $white;
+    }
+  }
+
+  @media (min-width: 768px) {
+    &__input-radio + &__input-radio {
+      margin-left: 2.4rem;
+    }
+  }
+
+  &__button-result {
+    display: block;
+    margin: 1.6rem auto;
+    background-color: $primary;
+    color: $white;
+    font-weight: bold;
+    font-size: 1.8rem;
+    padding: 1.6rem 3.2rem;
+    border-radius: 2.7rem;
+    transition: all .2s linear;
+    text-transform: uppercase;
+
+    &:hover,
+    &:active {
+      @extend %button-hover;
+    }
+
+    &:focus {
+      @extend %button-focus;
+    }
+  }
+}
+
+.result {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, .2);
+  transition: all .2s linear;
+
+  &__wrapper {
+    background-color: $white;
+    padding: 3.2rem;
   }
 }

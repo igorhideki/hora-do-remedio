@@ -19,9 +19,11 @@
     <section class="intro">
       <h1 class="intro__title">Calcule a hora de tomar seu remédio aqui</h1>
       <p class="intro__text"">
-        Utilize nossa calculadora para saber os horários certos para tomar seu
-        remédio. É fácil e rápido, preencha o horário da primeira dose e quantas
-        vezes ao dia são necessários e diremos a hora certa de cada dose.
+        Utilize nossa <strong>calculadora</strong> para saber os 
+        <strong>horários</strong> certos para tomar seu 
+        <strong>remédio</strong>. É fácil e rápido, preencha o horário da 
+        primeira dose e quantas vezes ao dia são necessários e diremos a 
+        <strong>hora certa</strong> de cada dose.
       </p>
     </section>
     <section class="form">
@@ -41,26 +43,35 @@
           <label class="form__label" for="input-min">Minuto</label>
         </div>
       </div>
+      <h2 class="form__title">Selecione o intervalo entre as doses</h2>
       <div class="form__input-interval">
-        Intervalo
-        <div>
+        <div class="form__input-radio">
           <input id="interval2" type="radio" name="interval" value="2" checked>
           <label for="interval2">12/12 h (Duas vezes ao dia)</label>
         </div>
-        <div>
+        <div class="form__input-radio">
           <input id="interval3" type="radio" name="interval" value="3">
           <label for="interval3">8/8 h (Três vezes ao dia)</label>
         </div>
-        <div>
+        <div class="form__input-radio">
           <input id="interval4" type="radio" name="interval" value="4">
           <label for="interval4">6/6 h (Quatro vezes ao dia)</label>
         </div>
       </div>
-      <div>
-        <button id="button-calc">Calcular horário</button>
+      <p class="form__text">
+        <strong>Siga</strong> as recomendações médicas, <strong>leia</strong> a bula, em caso de dúvidas entre em 
+        contato com o seu médico, nosso resultados são para <strong>auxiliar</strong> o cálculo 
+        do horário em que as doses devem ser tomadas.
+      </p>
+      <button id="button-calc" class="form__button-result">Calcular horário</button>
+    </section>
+    <section id="result" class="result">
+      <div class="result__wrapper">
+        <h2>Resultados</h2>
+        <div id="resultContent"></div>
+        <button id="closeResult" class="result__button">Fechar</button>
       </div>
     </section>
-    <div id="result"></div>
   </div>
 </body>
 
