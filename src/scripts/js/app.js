@@ -93,6 +93,7 @@ function renderResult (result) {
   result.forEach((item) => {
     const element = document.createElement('div')
     const text = document.createTextNode(item)
+    element.className = 'result__item'
     element.appendChild(text)
     resultContentElement.appendChild(element)
   })
