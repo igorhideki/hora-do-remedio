@@ -8,6 +8,7 @@ const buttonRemoveHour = document.getElementById('button-remove-hour')
 const buttonAddMin = document.getElementById('button-add-min')
 const buttonRemoveMin = document.getElementById('button-remove-min')
 const buttonCalc = document.getElementById('button-calc')
+const buttonCloseResult = document.getElementById('closeResult')
 
 function init () {
   console.log('Running app...')
@@ -20,6 +21,7 @@ function init () {
   buttonAddMin.addEventListener('click', increment)
   buttonRemoveMin.addEventListener('click', decrement)
   buttonCalc.addEventListener('click', calculateResult)
+  buttonCloseResult.addEventListener('click', closeResult)
 }
 
 function increment (event) {
@@ -81,17 +83,25 @@ function calculateResult () {
 
 function renderResult (result) {
   const resultElement = document.getElementById('result')
-  if (resultElement.hasChildNodes) {
-    while (resultElement.firstChild) {
-      resultElement.removeChild(resultElement.firstChild)
+  const resultContentElement = document.getElementById('resultContent')
+  resultElement.style.display = 'flex'
+  if (resultContentElement.hasChildNodes) {
+    while (resultContentElement.firstChild) {
+      resultContentElement.removeChild(resultContentElement.firstChild)
     }
   }
   result.forEach((item) => {
     const element = document.createElement('div')
     const text = document.createTextNode(item)
+    element.className = 'result__item'
     element.appendChild(text)
-    resultElement.appendChild(element)
+    resultContentElement.appendChild(element)
   })
+}
+
+function closeResult () {
+  const resultElement = document.getElementById('result')
+  resultElement.style.display = 'none'
 }
 
 init()

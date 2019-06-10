@@ -1,0 +1,274 @@
+%button-focus {
+  outline: 0;
+  box-shadow: 0 0 0.6rem rgba(0, 0, 0, 0.2);
+}
+
+%button-active {
+  background-color: darken($primary, 3%);
+  box-shadow: inset 0 0 0.6rem rgba(0, 0, 0, 0.2);
+}
+
+%button-hover {
+  background-color: darken($primary, 2%);
+  box-shadow: 0 0 0.6rem rgba(0, 0, 0, 0.2);
+}
+
+body {
+  @extend %font-content;
+  background-color: $accent;
+  color: $text-color;
+  padding: 1.6rem 0;
+}
+
+.container {
+  max-width: 80rem;
+  width: 100%;
+  padding: 0 1.6rem;
+  background-color: $lightest-gray;
+  margin: 0 auto;
+  height: 100%;
+  overflow: auto;
+
+  @media (min-width: 768px) {
+    padding: 0 3.2rem;
+  }
+}
+
+.header {
+  padding: 3.6rem 0;
+  border-bottom: 1px solid lighten($secondary, 30%);
+
+  &__logo {
+    max-width: 20rem;
+    width: 100%;
+    margin: 0 auto;
+    display: block;
+  }
+}
+
+.intro {
+  padding: 3rem 0;
+
+  &__title {
+    margin: 0 0 1rem;
+    font-size: 1.8rem;
+  }
+
+  &__text {
+    margin: 0;
+    font-size: 1.6rem;
+    text-align: justify;
+  }
+}
+
+.form {
+  &__title {
+    margin: 0 0 1rem;
+    font-size: 1.6rem;
+    text-align: center;
+  }
+
+  &__text {
+    margin: 0;
+    font-size: 1.6rem;
+    text-align: justify;
+  }
+
+  &__input-group {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 3rem;
+
+    > * {
+      padding: 0 0.8rem;
+    }
+  }
+
+  &__input-wrapper {
+    display: inline-block;
+  }
+
+  &__input-time {
+    font-size: 3.6rem;
+    display: inline-block;
+    max-width: 8rem;
+    text-align: center;
+    padding: 1.6rem 0;
+    border: none;
+
+    &:focus {
+      outline: 0;
+    }
+  }
+
+  &__label {
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 1.2rem;
+    margin-top: 0.8rem;
+    display: block;
+  }
+
+  &__button {
+    display: block;
+    width: 100%;
+    border: none;
+    background-color: $primary;
+    color: $white;
+    height: 2.8rem;
+    transition: all 0.2s linear;
+
+    &:first-of-type {
+      border-top-left-radius: 0.8rem;
+      border-top-right-radius: 0.8rem;
+    }
+
+    &:last-of-type {
+      border-bottom-left-radius: 0.8rem;
+      border-bottom-right-radius: 0.8rem;
+    }
+
+    &:focus {
+      @extend %button-focus;
+    }
+
+    &:hover,
+    &:active {
+      @extend %button-hover;
+    }
+  }
+
+  &__separator {
+    font-size: 3.6rem;
+    margin-top: -2.3rem;
+  }
+
+  &__input-interval {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 3rem;
+
+    @media (min-width: 768px) {
+      flex-direction: row;
+    }
+  }
+
+  &__input-radio {
+    & + & {
+      margin-top: 1.6rem;
+
+      @media (min-width: 768px) {
+        margin-top: 0;
+      }
+    }
+
+    & label {
+      padding: 0.8rem 1.6rem;
+      background-color: $light-gray;
+      user-select: none;
+      cursor: pointer;
+      transition: all 0.2s linear;
+      display: block;
+      border-radius: 1.6rem;
+      font-weight: bold;
+
+      &:hover {
+        box-shadow: 0 0 0.6rem rgba(0, 0, 0, 0.2);
+      }
+    }
+
+    & input {
+      display: none;
+    }
+
+    & input:checked + label {
+      @extend %button-active;
+      color: $white;
+    }
+  }
+
+  @media (min-width: 768px) {
+    &__input-radio + &__input-radio {
+      margin-left: 2.4rem;
+    }
+  }
+
+  &__button-result {
+    display: block;
+    margin: 1.6rem auto;
+    background-color: $primary;
+    color: $white;
+    font-weight: bold;
+    font-size: 1.6rem;
+    padding: 1rem 2.4rem;
+    border-radius: 2rem;
+    transition: all .2s linear;
+    text-transform: uppercase;
+
+    &:hover,
+    &:active {
+      @extend %button-hover;
+    }
+
+    &:focus {
+      @extend %button-focus;
+    }
+  }
+}
+
+.result {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, .2);
+  transition: all .2s linear;
+  padding: 1.6rem;
+
+  &__wrapper {
+    background-color: $white;
+    padding: 3.2rem;
+    width: 100%;
+    max-width: 48rem;
+    border-radius: .8rem;
+    box-shadow: 0 .8rem .8rem rgba(0, 0, 0, .2);
+    font-size: 1.6rem;
+  }
+
+  &__content {
+    margin: 1.6rem 0;
+  }
+
+  &__item {
+    font-size: 2.4rem;
+    text-align: center;
+
+    & + & {
+      margin-top: 1rem;
+    }
+  }
+
+  &__button {
+    font-size: 1.4rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: $primary;
+    background: transparent;
+    border: 0;
+    transition: all .2s linear;
+
+    &:focus,
+    &:hover,
+    &:active {
+      outline: 0;
+      color: darken($primary, 10%);
+    }
+  }
+}

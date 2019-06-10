@@ -1,43 +1,83 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Hora do remédio</title>
 </head>
+
 <body>
-  <h1>Hora do remédio</h1>
-  <div>
-    <label for="input-hour">Hora</label>
-    <input type="tel" id="input-hour" readonly>
-    <button id="button-add-hour" name="incrementHour">+ 1</button>
-    <button id="button-remove-hour" name="decrementHour">- 1</button>
+  <div class="container">
+    <header class="header">
+      <img
+        class="header__logo"
+        src="./assets/images/hora-do-remedio_1.svg"
+        alt="hora do remédio">
+    </header>
+    <section class="intro">
+      <h1 class="intro__title">Calcule a hora de tomar seu remédio aqui</h1>
+      <p class="intro__text"">
+        Utilize nossa <strong>calculadora</strong> para saber os 
+        <strong>horários</strong> certos para tomar seu 
+        <strong>remédio</strong>. É fácil e rápido, preencha o horário da 
+        primeira dose e quantas vezes ao dia são necessários e diremos a 
+        <strong>hora certa</strong> de cada dose.
+      </p>
+    </section>
+    <section class="form">
+      <h2 class="form__title">Selecione o horário da primeira dose</h2>
+      <div class="form__input-group">
+        <div class="form__input-wrapper">
+          <button id="button-add-hour" class="form__button" name="incrementHour">+ 1</button>
+          <input id="input-hour" class="form__input-time" type="tel" readonly>
+          <button id="button-remove-hour" class="form__button" name="decrementHour">- 1</button>
+          <label class="form__label" for="input-hour">Hora</label>
+        </div>
+        <span class="form__separator">:</span>
+        <div class="form__input-wrapper">
+          <button id="button-add-min" class="form__button" name="incrementMin">+ 1</button>
+          <input id="input-min" class="form__input-time" type="tel" readonly>
+          <button id="button-remove-min" class="form__button" name="decrementMin">- 1</button>
+          <label class="form__label" for="input-min">Minuto</label>
+        </div>
+      </div>
+      <h2 class="form__title">Selecione o intervalo entre as doses</h2>
+      <div class="form__input-interval">
+        <div class="form__input-radio">
+          <input id="interval2" type="radio" name="interval" value="2" checked>
+          <label for="interval2">12/12 h (Duas vezes ao dia)</label>
+        </div>
+        <div class="form__input-radio">
+          <input id="interval3" type="radio" name="interval" value="3">
+          <label for="interval3">8/8 h (Três vezes ao dia)</label>
+        </div>
+        <div class="form__input-radio">
+          <input id="interval4" type="radio" name="interval" value="4">
+          <label for="interval4">6/6 h (Quatro vezes ao dia)</label>
+        </div>
+      </div>
+      <p class="form__text">
+        Em caso de <strong>dúvidas</strong> entre em contato com o seu 
+        <strong>médico</strong>, nossos resultados são para 
+        <strong>auxiliar</strong> o cálculo do horário em que as doses devem ser
+        tomadas.
+      </p>
+      <button id="button-calc" class="form__button-result">Calcular horário</button>
+    </section>
+    <section id="result" class="result">
+      <div class="result__wrapper">
+        <h2>Resultados</h2>
+        <p class="result__text">
+          <strong>Pronto!</strong> Seus horários foram calculados. Não se 
+          esqueça de seguir as orientações médicas.
+        </p>
+        <div id="resultContent" class="result__content"></div>
+        <button id="closeResult" class="result__button">Fechar</button>
+      </div>
+    </section>
   </div>
-  <div>
-    <label for="input-min">Minuto</label>
-    <input type="tel" id="input-min" readonly>
-    <button id="button-add-min" name="incrementMin">+ 1</button>
-    <button id="button-remove-min" name="decrementMin">- 1</button>
-  </div>
-  <div>
-    Intervalo
-    <div>
-      <input id="interval2" type="radio" name="interval" value="2" checked>
-      <label for="interval2">12/12 h (Duas vezes ao dia)</label>
-    </div>
-    <div>
-      <input id="interval3" type="radio" name="interval" value="3">
-      <label for="interval3">8/8 h (Três vezes ao dia)</label>
-    </div>
-    <div>
-      <input id="interval4" type="radio" name="interval" value="4">
-      <label for="interval4">6/6 h (Quatro vezes ao dia)</label>
-    </div>
-  </div>
-  <div>
-    <button id="button-calc">Calcular horário</button>
-  </div>
-  <div id="result"></div>
 </body>
+
 </html>
